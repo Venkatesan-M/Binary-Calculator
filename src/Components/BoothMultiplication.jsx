@@ -86,6 +86,8 @@ function BoothMultiplication() {
   const handleSubmit = () => {
     if(Multiplicand === '' || Multiplier ==='' ){
       alert('Invalid Input');
+    }else if(parseInt(Multiplicand) < parseInt(Multiplier) ){
+      alert('Multiplicand Should be greater than Multiplier');
     }else{
       setContent([]);
       SetCalulate(true);

@@ -79,6 +79,8 @@ function RestoringDivision() {
     const handleSubmit = () => {
       if(Dividend === '' || Divisor ==='' ){
         alert('Invalid Input');
+      }else if(parseInt(Dividend) < parseInt(Divisor) ){
+        alert('Dividend Should be greater than Divisor');
       }else{
         setContent([]);
         SetCalulate(true);
