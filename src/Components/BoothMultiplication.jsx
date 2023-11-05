@@ -59,7 +59,6 @@ function twosComplement(M){
     if(M.length>res.length){
       res = '0'.repeat(M.length-res.length) + res;
     }
-    console.log(res);
     return res;
     
 }
