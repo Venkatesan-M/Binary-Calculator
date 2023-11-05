@@ -4,7 +4,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import BasicTable from './BasicTable';
 
 function boothmultiplication(Multiplicand, Multiplier) {
-  let M = DecimalToBinary(parseInt(Multiplicand));
+  let M = '0' + DecimalToBinary(parseInt(Multiplicand));
   let Q = DecimalToBinary(parseInt(Multiplier));
   let Q1 = '0';
   let N = M.length;
@@ -56,15 +56,23 @@ function twosComplement(M){
         (M[i]==='0') ? res+='1' : res+='0';
     }
     res = binaryAddition(res,'1');
+    if(M.length>res.length){
+      res = '0'.repeat(M.length-res.length) + res;
+    }
+    console.log(res);
     return res;
     
 }
 
 function binaryAddition(s1, s2) {
+    const M = Math.max(s1.length,s2.length);
     var num1 = parseInt(s1, 2);
     var num2 = parseInt(s2, 2);
     var sum = num1 + num2;
     var binarySum = sum.toString(2);
+    if(M > binarySum.length){
+      binarySum = '0'.repeat(M-binarySum.length) + binarySum;
+    }
     return  binarySum;
   }
   
